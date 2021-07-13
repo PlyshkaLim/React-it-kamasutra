@@ -1,0 +1,9 @@
+.nav {
+    grid-area: n;
+    background-color: #3F72AF;
+    padding: 10px 0;
+    min-width: 250px;
+    border-radius: 15px;
+    max-height: 225px;
+}
+

@@ -1,0 +1,35 @@
+.item {
+    font-size: 32px;
+    font-family: "Roboto Light", sans-serif;
+    color: white;
+    padding: 3px 10px 3px 5%;
+    margin: 1px;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.link {
+    color: black;
+}
+
+.activeLink {
+    color: gold;
+    border-radius: 15px;
+}
+
+.item:hover {
+    border-radius: 10px;
+    background-color: #DBE2EF;
+}
+
+.item a {
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+}
+
+.item img {
+    width: 30px;
+    height: auto;
+}
