@@ -4,7 +4,7 @@ import h from './Header.module.css';
 const Header = (props) => {
     return (
         <header className={h.header}>
-            {/*<img src={props.header.image} alt='logo'/>*/}
+            {/*<img src={props.header.avatar} alt='logo'/>*/}
             <img src='images/logo.png' alt='logo'/>
         </header>
     );

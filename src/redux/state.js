@@ -1,17 +1,21 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+
 let store = {
     _state: {
         profilePage: {
             selfInfo: {
                 id: 1234,
                 avatar: 'images/userAvatar.jpg',
-                name: 'Pepege'
+                name: 'Pepege',
             },
             posts: [
                 {id: 1, post: "Let's go play", like_count: "30", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
                 {id: 2, post: "Yei, I kill Daud", like_count: "26", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
                 {id: 3, post: "No joke", like_count: "17", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
             ],
-            newPostText: 'Текст123...'
+            newPostText: 'Текст123...',
         },
         dialogsPage: {
             dialogs: [
@@ -22,8 +26,9 @@ let store = {
             messages: [
                 {id: 1, message: "Hi"},
                 {id: 2, message: "ku"},
-                {id: 3, message: "/!/"}
+                {id: 3, message: "/!/"},
             ],
+            newMessageBody: '',
         },
         navbarPage: {
             labels: [
@@ -49,39 +54,23 @@ let store = {
                 },
             ]
         },
-        header: {image: 'images/logo.png'}
+        header: {id: 1, avatar: 'images/logo.png'}
     },
+
     _callSubscriber() {
-        console.log('state ch');
+        console.log('state change');
     },
 
     getState() {
         return this._state;
     },
+
     subscribe(observer) {
         this._callSubscriber = observer; //паттерн - observer / publisher
     },
 
-
-    addPost() {
-        let newPost = {
-            id: 5,
-            post: this._state.profilePage.newPostText,
-            like_count: 0,
-            avatar: 'images/userAvatar.jpg',
-            name: 'Pepege'
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber();
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber();
-    },
-
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 5,
                 post: this._state.profilePage.newPostText,
@@ -91,12 +80,17 @@ let store = {
             };
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
-            this._callSubscriber();
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber();
+            this._callSubscriber(this._state);
         }
     }
 }
 
+export const addPostActionCreator = () => ({type: 'ADD-POST'})
+export const updateNewPostTextActionCreator = (text) =>
+    ({type: 'UPDATE-NEW-POST-TEXT', newText: text,})
+
 export default store;
+window.store = store;
