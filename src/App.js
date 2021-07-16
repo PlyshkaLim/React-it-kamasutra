@@ -7,6 +7,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
 
+
 function App(props) {
     return (
         <BrowserRouter>
@@ -30,5 +31,5 @@ function App(props) {
         </BrowserRouter>
     );
 }
-
+/**/
 export default App;

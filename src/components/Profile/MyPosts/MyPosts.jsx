@@ -11,7 +11,6 @@ const MyPosts = (props) => {
                                    name={p.name}/>);
 
     let newPostElement = React.createRef();
-
     let addPost = () => {
         props.dispatch(addPostActionCreator());
     }
@@ -38,5 +37,5 @@ const MyPosts = (props) => {
         </div>
     </div>);
 }
-
+/**/
 export default MyPosts;

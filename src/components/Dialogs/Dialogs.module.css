@@ -39,10 +39,9 @@
     width: auto;
     padding: 0 5px;
 }
-
+/**/
 .messages {
     grid-area: m;
-    /*border: 2px solid black;*/
     padding: 10px;
 }
 

@@ -5,7 +5,6 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/state
 
 const DialogItem = (props) => {
     let path = "/dialogs/" + props.id;
-
     return <div className={d.dialog}>
         <img src={props.avatar} alt='avatar'/>
         <NavLink to={path}>{props.name}</NavLink>
@@ -16,7 +15,6 @@ const Message = (props) => {
         {props.message}
     </div>
 }
-
 const Dialogs = (props) => {
 
     let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name}
@@ -49,5 +47,5 @@ const Dialogs = (props) => {
         </div>
     );
 }
-
+/**/
 export default Dialogs;
