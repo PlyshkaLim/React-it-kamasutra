@@ -1,3 +1,9 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import navbarReducer from "./navbar-reducer";
+import headerReducer from "./header-reducer";
+
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
@@ -71,7 +77,13 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.navbarPage = navbarReducer(this._state.navbarPage, action);
+        this._state.header = headerReducer(this._state.header, action);
+        this._callSubscriber(this._state);
+
+        /*if (action.type === ADD_POST) {
             let newPost = {
                 id: 5,
                 post: this._state.profilePage.newPostText,
@@ -100,7 +112,7 @@ let store = {
             }
             this._state.dialogsPage.messages.push(newMessage);
             this._callSubscriber(this._state);
-        }
+        }*/
     }
 }
 
