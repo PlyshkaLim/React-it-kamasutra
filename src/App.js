@@ -6,7 +6,6 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import {BrowserRouter, Redirect, Route} from "react-router-dom";
-import store from "./redux/state";
 
 function App(props) {
     return (
@@ -20,7 +19,8 @@ function App(props) {
                                render={() => <Profile profilePage={props.state.profilePage}
                                                       dispatch={props.dispatch}/>}/>
                         <Route path="/dialogs"
-                               render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                               render={() => <Dialogs state={props.state.dialogsPage}
+                                                      dispatch={props.dispatch}/>}/>
                         <Route path="/news" component={News}/>
                         <Route path="/music" component={Music}/>
                         <Redirect from='/' to='/profile'/>
