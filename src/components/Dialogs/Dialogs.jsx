@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import d from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/state";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
 
 const DialogItem = (props) => {
     let path = "/dialogs/" + props.id;
@@ -17,18 +17,21 @@ const Message = (props) => {
 }
 const Dialogs = (props) => {
 
-    let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name}
-                                                                   id={d.id}
-                                                                   avatar={d.avatar}/>);
-    let messagesElements = props.state.messages.map(m => <Message message={m.message}/>);
-    let newMessageBody = props.state.newMessageBody;
+    let state = props.dialogsPage.dialogsPage;
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name}
+                                                             id={d.id}
+                                                             avatar={d.avatar}/>);
+    let messagesElements = state.messages.map(m => <Message message={m.message}/>);
+    let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {
-        props.dispatch(sendMessageCreator());
+        /*props.store.dispatch(sendMessageCreator());*/
+        props.sendMessage();
     }
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.dispatch(updateNewMessageBodyCreator(body));
+        /*props.store.dispatch(updateNewMessageBodyCreator(body));*/
+        props.updateNewMessageBody(body);
     }
 
     return (
