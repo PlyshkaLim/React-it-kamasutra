@@ -1,7 +1,6 @@
 import React from "react";
 import d from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
 
 const DialogItem = (props) => {
     let path = "/dialogs/" + props.id;
@@ -15,8 +14,8 @@ const Message = (props) => {
         {props.message}
     </div>
 }
-const Dialogs = (props) => {
 
+const Dialogs = (props) => {
     let state = props.dialogsPage.dialogsPage;
     let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name}
                                                              id={d.id}
