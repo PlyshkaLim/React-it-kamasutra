@@ -1,0 +1,71 @@
+.users {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    grid-template-rows: 75px 25px;
+    grid-template-areas:
+            "image card"
+            "button card";
+    width: 500px;
+    min-height: 75px;
+    grid-gap: 10px;
+
+
+}
+
+.image {
+    grid-area: image;
+    width: 75px;
+    height: 75px;
+
+
+}
+
+.button {
+    grid-area: button;
+
+
+}
+
+.button button {
+    height: 25px;
+    width: 75px;
+
+}
+
+.card {
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+            "name location"
+            "description location";
+
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+.name {
+    grid-area: name;
+    padding: 10px 0 0 10px;
+}
+
+.description {
+    grid-area: description;
+    padding: 10px 0 0 10px;
+}
+
+.location {
+    grid-area: location;
+
+    text-align: center;
+
+}
+
+.city {
+    grid-area: city;
+}
+
+.country {
+    grid-area: country;
+}
