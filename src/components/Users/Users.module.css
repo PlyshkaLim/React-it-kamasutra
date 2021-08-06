@@ -8,28 +8,23 @@
     width: 500px;
     min-height: 75px;
     grid-gap: 10px;
-
-
+    margin: 30px 15px;
 }
 
-.image {
+.image img {
     grid-area: image;
     width: 75px;
     height: 75px;
-
-
+    border-radius: 100%;
 }
 
 .button {
     grid-area: button;
-
-
 }
 
 .button button {
     height: 25px;
     width: 75px;
-
 }
 
 .card {
@@ -40,7 +35,6 @@
     grid-template-areas:
             "name location"
             "description location";
-
     border: 2px solid grey;
     border-radius: 10px;
 }
@@ -57,9 +51,7 @@
 
 .location {
     grid-area: location;
-
     text-align: center;
-
 }
 
 .city {

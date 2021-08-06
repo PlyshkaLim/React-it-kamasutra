@@ -3,20 +3,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
 
 let initialState = {
-    users: [
-        {
-            id: 1,
-            photo: '../images/Daud.jpg',
-            followed: false,
-            fullName: 'Daud',
-            status: 'hi, i\'m a killer',
-            location: {
-                city: 'Karnaca',
-                country: 'Serkonos',
-            }
-        },
-
-    ],
+    users: []
 }
 
 const usersReducer = (state = initialState, action) => {
