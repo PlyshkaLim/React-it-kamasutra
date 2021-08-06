@@ -30,7 +30,7 @@
 .card {
     grid-area: card;
     display: grid;
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: 1fr 200px;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
             "name location"
