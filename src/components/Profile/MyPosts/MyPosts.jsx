@@ -4,12 +4,12 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    let postsElements =
+    /*let postsElements =
         props.posts.map(p => <Post key={p.id}
                                    message={p.post}
                                    like_count={p.like_count}
                                    avatar={p.avatar}
-                                   name={p.name}/>);
+                                   name={p.name}/>);*/
 
     let newPostElement = React.createRef();
     let onPostChange = () => {
@@ -27,7 +27,7 @@ const MyPosts = (props) => {
             </button>
         </div>
         <div className={p.posts}>
-            {postsElements}
+            {/*{postsElements}*/}
         </div>
     </div>);
 }
