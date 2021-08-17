@@ -1,3 +1,15 @@
+.buttons{
+    font-size: 20px;
+}
+.page{
+    margin: 0 5px;
+}
+.selectedPage {
+    font-weight: bold;
+    margin: 0 5px;
+    border-bottom: 3px solid black;
+}
+
 .users {
     display: grid;
     grid-template-columns: 75px 1fr;
