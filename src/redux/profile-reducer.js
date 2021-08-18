@@ -3,7 +3,7 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 let initialState = {
-    selfInfo: {
+    selfinfo: {
         id: 1234,
         avatar: 'images/userAvatar.jpg',
         name: 'Pepege',
