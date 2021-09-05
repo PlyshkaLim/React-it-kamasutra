@@ -6,24 +6,25 @@ const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 let initialState = {
     selfinfo: {
-        id: 1234,
+        userId: 1234,
         avatar: 'images/userAvatar.jpg',
         name: 'Pepege',
     },
     posts: [
-        {id: 1, post: "Let's go play", like_count: "30", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
-        {id: 2, post: "Yei, I kill Daud", like_count: "26", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
-        {id: 3, post: "No joke", like_count: "17", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
+        {userId: 1, post: "Let's go play", like_count: "30", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
+        {userId: 2, post: "Yei, I kill Daud", like_count: "26", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
+        {userId: 3, post: "No joke", like_count: "17", avatar: 'images/userAvatar.jpg', name: 'Pepege'},
     ],
     newPostText: 'Текст123...',
     profile: null,
+    userId: 19149,
 }
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
-                id: 5,
+                userId: 5,
                 post: state.newPostText,
                 like_count: 0,
                 avatar: 'images/userAvatar.jpg',
